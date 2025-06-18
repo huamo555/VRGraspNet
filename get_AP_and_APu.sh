@@ -1,0 +1,1 @@
+python get_AP_and_APu.py --file_path_novel "/data3/gaoyuming/mutilview_project/graspness_viewloss/logs/log_kn_view_loss_1028/ap_kinect_Novel.npy"
