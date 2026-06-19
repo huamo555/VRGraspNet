@@ -1,5 +1,3 @@
-# VRGraspNet
-
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=rect&height=150&color=0:0f172a,55:2563eb,100:8b5cf6&text=VRGraspNet" alt="VRGraspNet banner">
 </p>
