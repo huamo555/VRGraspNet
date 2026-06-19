@@ -1,5 +1,10 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&height=150&color=0:0f172a,55:2563eb,100:8b5cf6&text=VRGraspNet" alt="VRGraspNet banner">
+ <img src="https://capsule-render.vercel.app/api?type=rect&height=150&color=0:38bdf8,50:60a5fa,100:c084fc&text=VRGraspNet" alt="VRGraspNet banner">
+</p>
+
+<h3 align="center">
+筛选文件
+
 </p>
 
 <h3 align="center">
