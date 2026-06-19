@@ -40,8 +40,6 @@
 
 VRGraspNet is a viewpoint-robust framework for **6-DoF grasp pose estimation** in cluttered robotic manipulation scenes. Single-view RGB-D observations are often incomplete and sensitive to camera viewpoint changes, which can cause unstable grasp predictions. VRGraspNet is designed to improve the robustness of grasp detection under different viewpoints by learning stronger geometric representations from point clouds and local grasp-aware features.
 
-This repository provides the research code for training, testing, graspness generation, visualization, collision checking, and GraspNet-style AP / APu evaluation.
-
 ## Installation
 
 ### 1. Clone
