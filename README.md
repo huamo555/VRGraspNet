@@ -3,7 +3,7 @@
 </p>
 
 <h3 align="center">
-  Toward Viewpoint Robust 6-DoF Grasp Pose Estimation
+  VRGraspNet: Toward Viewpoint Robust 6-DoF Grasp Pose Estimation
 </h3>
 
 <p align="center">
