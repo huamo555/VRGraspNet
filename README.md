@@ -1,7 +1,7 @@
 # VRGraspNet
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0ea5e9,100:8b5cf6&text=VRGraspNet" alt="VRGraspNet banner">
+  <img src="https://capsule-render.vercel.app/api?type=rect&height=150&color=0:0f172a,55:2563eb,100:8b5cf6&text=VRGraspNet" alt="VRGraspNet banner">
 </p>
 
 <h3 align="center">
@@ -98,3 +98,186 @@ VRGraspNet/
 |-- SE_resUnet.py                # SE-ResUNet module
 |-- backbone_resunet14.py        # Backbone network
 |-- collision_detector.py        # Collision checking
+|-- data_utils.py                # Data processing utilities
+|-- generate_graspness.py        # Graspness label / score generation
+|-- get_AP_and_APu.py            # AP / APu metric computation
+|-- get_AP_and_APu.sh            # Evaluation script
+|-- graspnet.py                  # Main grasp network
+|-- graspnet_dataset.py          # Dataset loader
+|-- infer_vis_grasp.py           # Inference and visualization
+|-- knn_modules.py               # KNN modules
+|-- label_generation.py          # Label generation
+|-- loss.py                      # Training losses
+|-- loss_utils.py                # Loss utilities
+|-- modules.py                   # Core model modules
+|-- pointnet2_modules.py         # PointNet++ modules
+|-- pointnet2_utils.py           # PointNet++ utilities
+|-- pytorch_utils.py             # PyTorch helper utilities
+|-- resnet.py                    # ResNet modules
+|-- setup.py                     # Extension setup
+|-- simplify_dataset.py          # Dataset simplification utility
+|-- train.py                     # Training entry point
+|-- test.py                      # Testing entry point
+|-- test_view.py                 # Viewpoint testing entry point
+|-- vis_graspness.py             # Graspness visualization
+|-- command_train.sh             # Training script
+|-- command_test.sh              # Testing script
+|-- command_testview.sh          # Viewpoint robustness testing script
+`-- requirements.txt
+```
+
+## Installation
+
+### 1. Clone
+
+```bash
+git clone https://github.com/huamo555/VRGraspNet.git
+cd VRGraspNet
+```
+
+### 2. Create Environment
+
+```bash
+conda create -n vrgraspnet python=3.8 -y
+conda activate vrgraspnet
+pip install -r requirements.txt
+```
+
+### 3. Compile CUDA Extensions
+
+```bash
+python setup.py install
+```
+
+If compilation fails, please check the compatibility of PyTorch, CUDA, GCC, and your GPU driver.
+
+## Dataset Preparation
+
+This project follows the **GraspNet-1Billion** benchmark setting. Please download the dataset from the official GraspNet website and organize it as follows:
+
+```text
+data/
+`-- graspnet/
+    |-- scenes/
+    |-- models/
+    |-- dex_models/
+    |-- grasp_label/
+    `-- collision_label/
+```
+
+Then update the dataset root path in the corresponding scripts or configuration files.
+
+## Quick Start
+
+### Generate Graspness
+
+```bash
+python generate_graspness.py
+```
+
+### Training
+
+```bash
+bash command_train.sh
+```
+
+You can also launch training directly:
+
+```bash
+python train.py
+```
+
+### Testing
+
+```bash
+bash command_test.sh
+```
+
+### Viewpoint Robustness Testing
+
+```bash
+bash command_testview.sh
+```
+
+or:
+
+```bash
+python test_view.py
+```
+
+### Evaluation
+
+```bash
+bash get_AP_and_APu.sh
+```
+
+or:
+
+```bash
+python get_AP_and_APu.py
+```
+
+### Visualization
+
+```bash
+python infer_vis_grasp.py
+python vis_graspness.py
+```
+
+## Results
+
+Final benchmark numbers will be updated after release materials are organized.
+
+### GraspNet-1Billion
+
+| Method | Seen AP | Similar AP | Novel AP | APu |
+| --- | ---: | ---: | ---: | ---: |
+| Baseline | TBD | TBD | TBD | TBD |
+| VRGraspNet | TBD | TBD | TBD | TBD |
+
+### Viewpoint Robustness
+
+| Setting | AP | APu | Notes |
+| --- | ---: | ---: | --- |
+| Original viewpoint | TBD | TBD | Standard evaluation |
+| Changed viewpoint | TBD | TBD | Viewpoint robustness evaluation |
+| VRGraspNet | TBD | TBD | Full model |
+
+## Model Zoo
+
+| Model | Dataset | Metric | Checkpoint |
+| --- | --- | --- | --- |
+| VRGraspNet | GraspNet-1Billion | TBD | Coming soon |
+
+## Roadmap
+
+- [ ] Release pretrained checkpoints.
+- [ ] Add final benchmark results.
+- [ ] Add viewpoint robustness evaluation details.
+- [ ] Add qualitative grasp visualization examples.
+- [ ] Add project page and demo video.
+
+## Citation
+
+If you find this project useful, please consider citing our paper:
+
+```bibtex
+@article{vrgraspnet2025,
+  title   = {VRGraspNet: Toward Viewpoint Robust 6-DoF Grasp Pose Estimation},
+  author  = {Gao, Yuming and Wang, Lichun and Zheng, Jiaqi and Xu, Kai and Yao, Huayang and Yin, Baocai},
+  journal = {IEEE Transactions on Circuits and Systems for Video Technology},
+  year    = {2025}
+}
+```
+
+## Acknowledgements
+
+This project is built upon the GraspNet benchmark and related open-source 6-DoF grasp pose estimation projects. We sincerely thank the authors and contributors for their valuable work.
+
+## Contact
+
+For questions, suggestions, or collaboration, please open an issue in this repository.
+
+## License
+
+This repository is released under the license specified in [LICENSE](LICENSE).
